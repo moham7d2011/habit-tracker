@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Katibeh&display=swap');
+
+* {
+    font-family: "Katibeh", serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 { font-size: 3.5rem; margin-bottom: 10px; color: #2c3e50; }
+
+.habits-list {
+    text-align: right;
+    background: #f8faff;
+    padding: 15px;
+    border-right: 6px solid #3498db;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.habits-list ul { list-style: none; padding: 0; font-size: 1.8rem; }
+
+/* تنسيق شريط التقدم */
+.progress-container { margin-bottom: 25px; }
+.progress-text { font-size: 2rem; margin-bottom: 5px; color: #2ecc71; }
+.progress-bar-bg {
+    background: #eee;
+    height: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.progress-bar-fill {
+    background: #2ecc71;
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.rules { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 8px;
+}
+
+.day-box {
+    aspect-ratio: 1;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.day-box.completed {
+    background: #2ecc71;
+    color: white;
+    border-color: #2ecc71;
+    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
+}
+
+.reset-btn {
+    background: #95a5a6;
+    color: white;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+@media (max-width: 500px) {
+    .grid { grid-template-columns: repeat(5, 1fr); }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحدي الـ 45 يوم</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>5 عادات لمدة 45 يوم</h1>
+        
+        <div class="habits-list">
+            <ul>
+                <li>✨ المحافظة على الصلاة والأذكار</li>
+                <li>📚 المذاكرة ساعتين على الأقل يومياً</li>
+                <li>📖 حفظ الورد اليومي من القرآن</li>
+                <li>🕌 صلاة الفجر جماعة في المسجد</li>
+                <li>🎧 تعلم التجويد (يوم ويوم)</li>
+            </ul>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-text">نسبة الإنجاز: <span id="percent">0%</span></div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="barFill"></div>
+            </div>
+        </div>
+
+        <div class="rules">
+            <p>🚫 عدم استخدام الهاتف قبل النوم وبعد الاستيقاظ</p>
+            <p>📱 استخدامه لمدة (2) ساعة فقط</p>
+        </div>
+
+        <div class="grid" id="habitGrid"></div>
+
+        <div class="info">
+            <p>بدأنا في 1 أبريل والموعد النهائي 15 مايو بإذن الله</p>
+            <button onclick="resetProgress()" class="reset-btn">إعادة ضبط التحدي</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
