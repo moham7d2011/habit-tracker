@@ -20,8 +20,8 @@ function updateUI() {
         const dayStats = habitData[i] || [];
         const completedCount = dayStats.filter(status => status === true).length;
         
-        if (completedCount >= 4) { box.classList.add('perfect'); perfectDays++; }
-        else if (completedCount === 3) box.classList.add('good');
+        if (completedCount > 4) { box.classList.add('perfect'); perfectDays++; }
+        else if (completedCount >= 3) box.classList.add('good');
         else if (completedCount > 0) box.classList.add('low');
         
         box.onclick = () => openModal(i);
