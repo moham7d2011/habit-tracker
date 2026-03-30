@@ -5,31 +5,29 @@
     box-sizing: border-box;
 }
 
+/* التنسيقات العامة */
 body {
-    background: #f0f2f5;
     display: flex;
     justify-content: center;
     padding: 20px;
     margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
-    background: white;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     max-width: 700px;
     width: 100%;
     text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-h1 { font-size: 3.5rem; margin-bottom: 10px; color: #2c3e50; }
+h1 { font-size: 3.5rem; margin-bottom: 10px; }
 
 .habits-list {
     text-align: right;
-    background: #f8faff;
     padding: 15px;
-    border-right: 6px solid #3498db;
     border-radius: 8px;
     margin-bottom: 20px;
 }
@@ -38,21 +36,19 @@ h1 { font-size: 3.5rem; margin-bottom: 10px; color: #2c3e50; }
 
 /* تنسيق شريط التقدم */
 .progress-container { margin-bottom: 25px; }
-.progress-text { font-size: 2rem; margin-bottom: 5px; color: #2ecc71; }
+.progress-text { font-size: 2rem; margin-bottom: 5px; }
 .progress-bar-bg {
-    background: #eee;
     height: 15px;
     border-radius: 10px;
     overflow: hidden;
 }
 .progress-bar-fill {
-    background: #2ecc71;
     height: 100%;
     width: 0%;
     transition: width 0.5s ease;
 }
 
-.rules { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; }
+.rules { font-size: 1.6rem; margin-bottom: 20px; }
 
 .grid {
     display: grid;
@@ -62,7 +58,7 @@ h1 { font-size: 3.5rem; margin-bottom: 10px; color: #2c3e50; }
 
 .day-box {
     aspect-ratio: 1;
-    border: 2px solid #ddd;
+    border: 2px solid;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -80,7 +76,6 @@ h1 { font-size: 3.5rem; margin-bottom: 10px; color: #2c3e50; }
 }
 
 .reset-btn {
-    background: #95a5a6;
     color: white;
     border: none;
     padding: 5px 20px;
@@ -92,4 +87,130 @@ h1 { font-size: 3.5rem; margin-bottom: 10px; color: #2c3e50; }
 
 @media (max-width: 500px) {
     .grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+/* زرتغيير المظهر */
+.theme-switcher {
+    text-align: right;
+    margin-bottom: 15px;
+}
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+/* رسالة الجائزة */
+.reward-message {
+    background-color: #f1c40f; /* لون ذهبي */
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    border: 3px solid #f39c12;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reward-message.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    display: none; /* لمنع ظهورها تماماً */
+}
+.reward-message h2 { font-size: 2.5rem; margin-top: 0; }
+.reward-icon { font-size: 4rem; margin-top: 10px; }
+
+
+/* --- تنسيقات المظهر الفاتح (الافتراضي) --- */
+body.light-theme {
+    background: #f0f2f5;
+    color: #333;
+}
+body.light-theme .container {
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+body.light-theme h1 { color: #2c3e50; }
+body.light-theme .habits-list {
+    background: #f8faff;
+    border-right: 6px solid #3498db;
+}
+body.light-theme .progress-text { color: #2ecc71; }
+body.light-theme .progress-bar-bg { background: #eee; }
+body.light-theme .progress-bar-fill { background: #2ecc71; }
+body.light-theme .rules { color: #e74c3c; }
+body.light-theme .day-box { border-color: #ddd; color: #7f8c8d; }
+body.light-theme .reset-btn { background: #95a5a6; }
+body.light-theme .icon-btn { color: #2c3e50; }
+
+
+/* --- تنسيقات المظهر الداكن (الأسود) --- */
+body.dark-theme {
+    background: #1a1a1a; /* لون خلفية داكن جداً */
+    color: #ecf0f1; /* لون خط فاتح */
+}
+body.dark-theme .container {
+    background: #2c3e50; /* لون خلفية البطاقة */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+body.dark-theme h1 { color: #ecf0f1; }
+body.dark-theme .habits-list {
+    background: #34495e;
+    border-right: 6px solid #f1c40f; /* لون ذهبي */
+}
+body.dark-theme .progress-text { color: #f1c40f; }
+body.dark-theme .progress-bar-bg { background: #4a5a6a; }
+body.dark-theme .progress-bar-fill { background: #f1c40f; }
+body.dark-theme .rules { color: #ff6b6b; }
+body.dark-theme .day-box { border-color: #6a7a8a; color: #bdc3c7; }
+body.dark-theme .reset-btn { background: #6a7a8a; }
+body.dark-theme .icon-btn { color: #ecf0f1; }
+/* ألوان الحالة الجديدة */
+.day-box.perfect { background-color: #2ecc71; color: white; border: none; } /* 4 أو 5 عادات - أخضر */
+.day-box.good { background-color: #f1c40f; color: white; border: none; }    /* 3 عادات - أصفر */
+.day-box.low { background-color: #e74c3c; color: white; border: none; }     /* 1-2 عادة - أحمر */
+
+/* تنسيق النافذة المنبثقة */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal.hidden { display: none; }
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: right;
+}
+
+body.dark-theme .modal-content {
+    background: #2c3e50;
+    color: white;
+}
+
+.habit-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+.close-btn{
+    padding : 15px 20px;
+    margin: 0 auto;
+    background: #26E4FF;
+    color: #fff;
+    border: none;
+    border-radius: 10%;
+    font-size: 25px;
+}
+#modalTitle{
+    font-size: 30px;
+    font-weight: 300;
 }
