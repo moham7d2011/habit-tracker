@@ -2,14 +2,24 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="Kg3azQrRTKOPYGG7ZW_oP0AXj-nlSzvHEGjNVMsL0cU" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تحدي الـ 45 يوم</title>
+    
+    <title>تحدي الـ 45 يوم 🌱 Mohamed</title>
+    <meta name="keywords" content="تحدي 45 يوم, متتبع عادات, محمد, تطوير الذات, برمجة, 45 days challenge, habit tracker">
+    <meta name="description" content="تطبيق شخصي لتتبع العادات الخمس الأساسية لمدة 45 يوم بنظام تقييم بالألوان.">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%232ecc71'/%3E%3Cpath d='M75 35 45 65 25 45' fill='none' stroke='white' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%232ecc71'/%3E%3Cpath d='M75 35 45 65 25 45' fill='none' stroke='white' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
-        <h1>5 عادات لمدة 45 يوم</h1>
+<body class="light-theme"> <div class="container">
+        <div class="theme-switcher">
+            <button id="themeBtn" onclick="toggleTheme()" class="icon-btn">🌞</button>
+        </div>
+
+        <h1>5 عادات لمدة 45 يوم 🌟</h1>
         
         <div class="habits-list">
             <ul>
@@ -20,12 +30,26 @@
                 <li>🎧 تعلم التجويد (يوم ويوم)</li>
             </ul>
         </div>
+        <div id="habitModal" class="modal hidden">
+    <div class="modal-content">
+        <h3 id="modalTitle">يوم 1</h3>
+        <div id="checklist">
+        </div>
+        <button onclick="closeModal()" class="close-btn">إغلاق</button>
+    </div>
+</div>
 
         <div class="progress-container">
             <div class="progress-text">نسبة الإنجاز: <span id="percent">0%</span></div>
             <div class="progress-bar-bg">
                 <div class="progress-bar-fill" id="barFill"></div>
             </div>
+        </div>
+
+        <div id="rewardMessage" class="reward-message hidden">
+            <h2>🎉 تهانينا يا بطل! لقد أنجزت التحدي! 🎉</h2>
+            <p>لقد أثبت إرادتك وعزيمتك. جائزتك هي الشعور بالإنجاز العظيم والثقة بالنفس.</p>
+            <div class="reward-icon">🏆</div>
         </div>
 
         <div class="rules">
@@ -40,6 +64,7 @@
             <button onclick="resetProgress()" class="reset-btn">إعادة ضبط التحدي</button>
         </div>
     </div>
+
 
     <script src="script.js"></script>
 </body>
