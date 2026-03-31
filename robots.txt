@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moham7d2011.github.io/habit-tracker/sitemap.xml
